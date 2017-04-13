@@ -39,6 +39,7 @@ INITIALIZE
 */
 document.addEventListener('DOMContentLoaded', function() {
 
+  // FIREBASE CONFIG
   var config = {
       apiKey: "AIzaSyD-StDnfMrvKydc8KNyHT12a82zRMNn_Ws",
       authDomain: "uhclshuttle.firebaseapp.com",
@@ -46,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
       storageBucket: "uhclshuttle.appspot.com",
       messagingSenderId: "642776189341"
     };
-    firebase.initializeApp(config);
+
+  //INITIALIZE FIREBASE WEB APP
+  firebase.initializeApp(config);
   var db = firebase.database();
   var auth = firebase.auth();
 

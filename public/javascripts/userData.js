@@ -1,5 +1,17 @@
-var db = firebase.database();
-var userRef = db.ref("Users");
+var config = {
+    apiKey: "AIzaSyD-StDnfMrvKydc8KNyHT12a82zRMNn_Ws",
+    authDomain: "uhclshuttle.firebaseapp.com",
+    databaseURL: "https://uhclshuttle.firebaseio.com",
+    storageBucket: "uhclshuttle.appspot.com",
+    messagingSenderId: "642776189341"
+  };
+  firebase.initializeApp(config);
+var db1 = firebase.database();
+// var auth = firebase.auth();
+
+
+var userRef = db1.ref("Users");
+const uList = document.getElementById('list');
 
 function remove(userID) {
     console.log(userID);
@@ -11,47 +23,15 @@ userRef.on('child_added', snap => {
   var dataEmail = snap.child('Email').val();
   var dataKey = snap.key;
 
-  $("#tbody").append("<tr id="+dataKey+"><td>"+dataKey
-                  +"</td><td>"+dataName+"</td><td>"+
-                  dataEmail+"</td></tr>");
-});
+  console.log(dataEmail);
 
-userRef.on('child_changed', snap => {
-  // //const tbodyChanged = document.getElementById(snap.key);
-  // var dataKey = snap.key;
-  // // snap = snap.child(dataKey);
-  // var dataName = snap.child(dataKey).child('Name').val();
-  // var dataEmail = snap.child('Email').val();
-
+  const li = document.createElement('li');
+  li.innerText = dataEmail;
+  li.id = dataKey;
+  uList.appendChild(li);
   // $("#tbody").append("<tr id="+dataKey+"><td>"+dataKey
   //                 +"</td><td>"+dataName+"</td><td>"+
   //                 dataEmail+"</td></tr>");
+
+
 });
-
-userRef.on('child_removed', snap => {
-  //const tbodyChanged = document.getElementById(snap.key);
-  // userRef.child(dataKey).remove();
-
-  // $("#tbody").append("<tr id="+dataKey+"><td>"+dataKey
-  //                 +"</td><td>"+dataName+"</td><td>"+
-  //                 dataEmail+"</td></tr>");
-});
-
-
-// const messaging = firebase.messaging();
-// messaging.requestPermission()
-// .then(function () {
-//   console.log("Have Permission");
-//   return messaging.getToken();
-// })
-// .then(function (token) {
-//   console.log(token);
-// })
-// .catch(function(err) {
-//   console.log("Error Occured");
-// });
-//
-//
-// messaging.onMessage(function(payload) {
-//   console.log('onMessage: ', payload);
-// });
