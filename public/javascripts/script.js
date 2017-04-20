@@ -629,6 +629,16 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(function () {
       user = auth.currentUser;
       user.sendEmailVerification();
+      var uid = user.uid;
+      //Save Data to realtime Database
+      // var ref = db.ref("users/" + uid);
+      // ref.set({
+      //   email: email,
+      //   name: displayName,
+      // });
+
+      putNewUser();
+      // displayNameExists();
     })
     .then(function () {
       user.updateProfile({
@@ -655,8 +665,8 @@ document.addEventListener('DOMContentLoaded', function() {
           db.ref('/users/' + uid).set({
             displayName: displayName,
             email: email,
-            photoUrl: photoUrl,
-            provider: provider
+            // photoUrl: photoUrl,
+            // provider: provider
           });
         }
       }, function(error) {
@@ -818,7 +828,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //TOAST
   function toast (msg,timeout){
-    if(!timeout){timeout = 2750}
+    if(!timeout){timeout = 5000}
     var data = {
       message: msg,
       timeout: timeout
