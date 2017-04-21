@@ -71,6 +71,10 @@ p{
   border-bottom:#333 7px solid;
 }
 
+#tableUsers{
+  margin:20px 0 60px 0;
+}
+
 footer{
   padding:30px;
 }

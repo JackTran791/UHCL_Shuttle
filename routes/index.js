@@ -15,9 +15,10 @@ router.post('/sendData', urlencodedParser, function(req, res, next) {
   client.messages.create({
       from: "+12165038260",
       to: "+18329516415",
-      body: req.body.txtMsg + " and " + req.body.email,
+      body: req.body.txtMsg,
   }, function(err, message) {
-      console.log(message.sid);
+      // console.log(message.sid);
+      console.log("Error!");
   });
   console.log(req.body);
   res.send('Welcome ' + req.body.txtMsg);

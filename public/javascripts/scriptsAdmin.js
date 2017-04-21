@@ -10,9 +10,18 @@ rootRef.on("child_added", snap => {
   var uid = snap.key;
 
 
-  $("#table_body").append("<tr onmousemove='myMoveFunction()' onmouseout='myMoveOutFunction()'><td id='un' value="+name+">"+
-                   name+"</td><td id='ue' value="+ email +">" +email +
-                  "</td><td><button class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect' id="+ uid
-                   +">Send</button></td><td><input type='submit' value='Submit' onclick='myMoveFunction()'/></td></tr>");
+  $("#table_body").append("<tr><td id='un' value="+name+">"+
+                   name+"</td><td id='ue'  value="+ email +">" +email +
+                  "</td><td><input type='radio' class='getData' onClick='btnClick()'></input></td></tr>");
 });
 //onmousemove='myMoveFunction()'
+//onmousemove='myMoveFunction()' onmouseout='myMoveOutFunction()'
+function btnClick() {
+  $(".getData").click(function() {
+      var $row = $(this).closest("tr");    // Find the row
+      var $textName = $row.find("#un").text(); // Find the text
+      var $textEmail = $row.find("#ue").text();
+
+      document.getElementById("myTextarea").value = $textName + " and " + $textEmail;
+  });
+}
