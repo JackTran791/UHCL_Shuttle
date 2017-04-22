@@ -17,11 +17,16 @@ router.post('/sendData', urlencodedParser, function(req, res, next) {
       to: "+18329516415",
       body: req.body.txtMsg,
   }, function(err, message) {
-      // console.log(message.sid);
-      console.log("Error!");
+      console.log(message.sid);
+      // console.log("Error!");
   });
-  console.log(req.body);
-  res.send('Welcome ' + req.body.txtMsg);
+  res.render('sendData');
+  // res.send('Welcome ' + req.body.txtMsg);
+});
+
+
+router.get('/sendData', function(req, res, next) {
+  res.render('sendData');
 });
 
 /* GET home page. */
@@ -60,4 +65,6 @@ router.get('/ack', function(req, res) {
 router.get('/error', function(req, res) {
   res.render('error');
 });
+
+
 module.exports = router;

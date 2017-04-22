@@ -631,13 +631,13 @@ document.addEventListener('DOMContentLoaded', function() {
       user.sendEmailVerification();
       var uid = user.uid;
       //Save Data to realtime Database
-      // var ref = db.ref("users/" + uid);
-      // ref.set({
-      //   email: email,
-      //   name: displayName,
-      // });
+      var ref = db.ref("users/" + uid);
+      ref.set({
+        email: email,
+        name: displayName,
+      });
 
-      putNewUser();
+      // putNewUser();
       // displayNameExists();
     })
     .then(function () {
