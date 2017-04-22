@@ -9,16 +9,15 @@ INITIALIZE
 document.addEventListener('DOMContentLoaded', function() {
 
 
-  //FIREBASE CONFIG
-      var config = {
-     apiKey: "AIzaSyCBZhBFK2sHs5B5Jle_3pk-u3TWU5hvIoE",
-     authDomain: "uhcl-shuttle-app.firebaseapp.com",
-     databaseURL: "https://uhcl-shuttle-app.firebaseio.com",
-     projectId: "uhcl-shuttle-app",
-     storageBucket: "uhcl-shuttle-app.appspot.com",
-     messagingSenderId: "560988370163"
-   };
-//INITIALIZE FIREBASE WEB APP
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB-nhsAVIBPlgokbJIdQ5WjiC8SrJQmtJE",
+    authDomain: "uhcl-shuttle-app-1b25d.firebaseapp.com",
+    databaseURL: "https://uhcl-shuttle-app-1b25d.firebaseio.com",
+    projectId: "uhcl-shuttle-app-1b25d",
+    storageBucket: "uhcl-shuttle-app-1b25d.appspot.com",
+    messagingSenderId: "644302878835"
+  };
   firebase.initializeApp(config);
 
     var auth = firebase.auth();
