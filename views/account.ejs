@@ -1,149 +1,133 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset=utf-8 />
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Mobile viewing enhancement -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <!-- Description should be roughly 155 characters, no double quotes, use keywords -->
-    <meta name="description" content="Firebase v3 Web Auth Full Functionality Example Code" />
-    <!-- Format as Primary Keyword - Secondary Keyword | Brand Name, keep under 55 characters -->
-    <title>Firebase v3 Web Auth Sandbox</title>
-    <!-- Minimize the number of CSS files for performance -->
-    <link rel="shortcut icon" href="/images/favicon.png">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100,300,700italic,500,500italic,400italic,300italic,100italic|Roboto+Condensed:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-amber.min.css" />
-    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="/images/hawk_logo.png">
 
-<body>
-    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <title>UHCL Account</title>
 
-        <!-- Header -->
-        <header class="mdl-layout__header mdl-layout__header--transparent ">
-            <div class="mdl-layout__header-row mdl-color-text--grey-700">
-                <span class="mdl-layout-title">
-            <a href="/"><img src="/images/firebase-logo.png" alt="logo" height="48"></a>
-          </span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation -->
-                <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="javascript:void(0)" id="sign-in-button">
-                        <i class="material-icons">account_circle</i> <span id="account">Sign In</span>
-                    </a>
-                    <a class="mdl-navigation__link" href="javascript:void(0)" id="account-menu-button">
-                    </a>
-                    <a class="mdl-navigation__link" href="javascript:void(0)" id="help-button">
-                        <i class="material-icons">help</i> <span id="help">Help</span>
-                    </a>
-                </nav>
-            </div>
-        </header>
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+      <link href="/stylesheets/bootstrapValidator.min.css" rel="stylesheet">
+       <link href="/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+       <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-amber.min.css"/>
+      <link href="/stylesheets/animate.css" rel="stylesheet">
+   <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
 
-        <!-- Side Drawer -->
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title"><img src="/images/firebase-logo.png" alt="logo" height="48"></span>
-            <div class="drawer-separator"></div>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="/public"><i class="material-icons">lock_open</i> Public</a>
-                <a class="mdl-navigation__link" href="/help"><i class="material-icons">help_outline</i> Help</a>
-            </nav>
+
+
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://uhcl-shuttle-app.firebaseapp.com/">UHCL Shuttle</a>
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="https://uhcl-shuttle-app.firebaseapp.com/">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
+           <li class="dropdown"><a href="javascript:void(0)" id="account-menu-button"></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
-        <!--Main Page -->
-        <main class="mdl-layout__content page-content">
-
-            <!--Card Section -->
-            <section class="mdl-grid">
-
-                <!-- Center Card -->
-                <div class="mdl-layout-spacer"></div>
-
-                <!-- Account Card -->
-                <div class="mdl-card mdl-shadow--2dp mdl-cell" id="account-card">
-                    <div class="mdl-card__title">
-                        <h1 class="mdl-card__title-text mdl-color-text--white">My Account</h1>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-typography--headline text-center">
-                        <p class="text-left">
-                            All members have a unique identifier called a UID. Developers will typically create a users node in the Realtime Database and populate it with the UID's of each member. Data specific to a user can then be stored and queried.
-                        </p>
-                        <!--Only password based members see this -->
-                        <div class="text-center" id="pwd-users-only-div">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="new-email-input-mdl-textfield">
-                                <input class="mdl-textfield__input mdl-color-text--orange-500" type="text" id="new-email-input">
-                                <label class="mdl-textfield__label" for="unew-email-input">New Email Address</label>
+      <div class="starter-template">
+        <div class="container">
+         <div id="account-card"> <!-- Start of Account-card -->
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="row">
+                        <div class="card col-md-12" style="margin:20px;">
+                            <div class="row">
+                                <div id="card-header" class="card-header text-center col-md-12">- My Account -</div>
                             </div>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="new-email-submit-button" disabled>
-                                Submit
-                            </button>
-                            <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="new-password-submit-button">
-                                Reset Password
-                            </button>
+                            <div class="card-block">
+                                <div id="pwd-users-only-div"> <!-- Only password based users see this -->
+                                    <div class="row card-body">
+                                        <form id="account-reset-div" class="col-md-12">
+                                            <div id="new-email-input-mdl-textfield" class="form-inline">
+                                                <input type="email" id="new-email-input" class="form-control transparent-input" name="email" placeholder="New E-mail Address" required autofocus>
+                                                <button id="new-email-submit-button" type="button" class="btn btn-link" disabled>Submit</a>
+                                            </div>
+                                        </form>
+                                        <button id="new-password-submit-button" class="btn btn-primary">Reset Password</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row card-body">
+                                <div class="card-footer text-muted col-md-12">
+                                    <div class="row">
+                                        <div id="registerButtons" class="col-md-12">
+                                            <a id="home-button" href="login">Home</a>
+                                            <button id="delete-account-button" type="button" class="btn btn-default"><i class="fa fa-trash fa-lg"></i>Delete Account</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="mdl-card__actions mdl-card--border intro-card-actions">
-                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="/">
-                            Home
-                        </a>
-                        <div class="mdl-layout-spacer"></div>
-                        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="delete-account-button" disabled>
-                            <i class="material-icons align">delete</i> Delete Account
-                        </button>
-                    </div>
                 </div>
-
-                <!-- Center Card -->
-                <div class="mdl-layout-spacer"></div>
-
-            <!--/Card Section -->
-            </section>
-
-            <p class="text-center license">Copyright &#169; 2016 <a class="mdl-color-text--grey-600" href="javascript:void(0)" onclick="window.open('https://rack.pub', 'newwindow', 'width=800, height=400'); return false;">Ron Royston</a>, MIT License</p>
-
-        </main>
-
-        <!--Main Page Footer Section -->
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">
-                    More Information
-                </div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="https://firebase.google.com/docs/auth/">Firebase Authentication</a></li>
-                    <li><a href="https://firebase.google.com/docs/reference/js/index-all">Firebase Web Reference Index</a></li>
-                </ul>
             </div>
-        </footer>
+         </div> <!-- End of Account-card -->
 
-    </div>
-
-    <!--Toast Messages Markup -->
+                          <!--Toast Messages Markup -->
     <div id="toast" class="mdl-js-snackbar mdl-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
     </div>
 
-    <!-- IE Compatibility shims -->
-      <!--[if lt IE 9]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js""></script>
-      <![endif]-->
+      <!-- The actual Snackbar
+           <div id="alert-snackbar" class=" alert animated fadeInUp" style="display: none;">
+            </div> -->
 
-      <!--[if IE]>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
-        <link href="../assets/ie.css" rel="stylesheet">
-      <![endif]-->
-    <!-- end shims -->
+         <!-- Snackbar ends -->
+        </div>
+      </div>
 
-    <script src="https://www.gstatic.com/firebasejs/3.7.6/firebase.js"></script>
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <script src="/javascripts/script.js"></script>
-</body>
+      <footer class="footer">
+        <p class="text-muted">University of Houston, Clear-Lake</p>
+        <p id="text1">&#64;Abhishek B.</p>
 
+    </footer>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+          <script src="/javascripts/bootstrap.min.js"></script>
+          <script src="/javascripts/bootstrapValidator.min.js"></script>
+          <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+          <script src="/javascripts/indexFirebase.js"></script>
+  </body>
 </html>
+<!--pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@uhcl\.edu$"-->

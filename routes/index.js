@@ -19,9 +19,10 @@ router.post('/sendData', urlencodedParser, function(req, res, next) {
   }, function(err, message) {
       console.log(message.sid);
       // console.log("Error!");
+      console.log(req.body.txtMsg);
   });
-  res.render('sendData');
-  // res.send('Welcome ' + req.body.txtMsg);
+  // res.render('sendData');
+  res.send('Welcome ' + req.body.txtMsg);
 });
 
 
@@ -36,6 +37,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/admin', function(req, res, next) {
   res.render('admin', { title: 'Express' });
+});
+
+router.get('/admin1', function(req, res, next) {
+  res.render('admin1', { title: 'Express' });
 });
 
 router.get('/login', function(req, res) {
@@ -64,6 +69,10 @@ router.get('/ack', function(req, res) {
 
 router.get('/error', function(req, res) {
   res.render('error');
+});
+
+router.get('/404', function(req, res) {
+  res.render('404');
 });
 
 
