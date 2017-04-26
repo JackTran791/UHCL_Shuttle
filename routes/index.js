@@ -11,7 +11,7 @@ var client = require('twilio')(accountSid, authToken);
 // parse application/x-www-form-urlencoded
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-router.post('/sendData', urlencodedParser, function(req, res, next) {
+router.post('/admin', urlencodedParser, function(req, res, next) {
   client.messages.create({
       from: "+12165038260",
       to: "+18329516415",
@@ -21,14 +21,10 @@ router.post('/sendData', urlencodedParser, function(req, res, next) {
       // console.log("Error!");
       console.log(req.body.txtMsg);
   });
-  // res.render('sendData');
-  res.send('Welcome ' + req.body.txtMsg);
+  res.render('sendDataSuccess');
+  // res.send('Welcome ' + req.body.txtMsg);
 });
 
-
-router.get('/sendData', function(req, res, next) {
-  res.render('sendData');
-});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -73,6 +69,10 @@ router.get('/error', function(req, res) {
 
 router.get('/404', function(req, res) {
   res.render('404');
+});
+
+router.get('/sendDataSuccess', function(req, res, next) {
+  res.render('sendDataSuccess', { title: 'Express' });
 });
 
 
