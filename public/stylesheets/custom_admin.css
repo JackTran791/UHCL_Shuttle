@@ -98,13 +98,13 @@ body {
 }
 
 .navbar-inverse {
-  background-color: #0078AD;
+  background-color: #E8CC30;
   opacity: 1;
   border-color: aliceblue;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #ffffff;
+  color: green;
   font-weight: bold;
   font-size: 20px;
   font-family: "Times New Roman", Georgia, sans-serif;
@@ -112,30 +112,30 @@ body {
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-    color: #ffffff;
-    background-color: #0078AD;
+    color: green;
+    background-color: #E8CC30;
 }
 
 .navbar-inverse .navbar-nav>a .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus {
-  color: #ffffff;
-  background-color:#0078AD;
+  color: green;
+  background-color:#E8CC30;
   font-size: 18px;
   font-family: "Times New Roman", Georgia, sans-serif;
 }
 
 .navbar-inverse .navbar-nav>.active>a:hover {
   background-color: #016390;
-  color: #ffffff;
+  color: green;
 }
 
 .navbar-inverse .navbar-nav>li>a {
-  color: #ffffff;
+  color: green;
   font-size: 15px;
   margin-left: 30px;
   font-family: "Times New Roman", Georgia, sans-serif;
   letter-spacing: 1px;
   font-weight: bold;
-  background-color:#0078AD;
+  background-color:#E8CC30;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
@@ -541,15 +541,15 @@ h5 {
   position: relative;
   bottom: 0;
   width: 100%;
-  background-color: #0078AD;
+  background-color: #E8CC30;
   opacity: 1;
 }
 
 .text-muted {
   padding-top: 10px;
-  color: #ffffff;
+  color: green;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Times New Roman", Georgia, sans-serif;
   letter-spacing: 2px;
 }
@@ -736,7 +736,7 @@ h5 {
 
 #t_body th {
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   font-family: 'Arial', serif;
   color: #000000;
   font-weight: 700;

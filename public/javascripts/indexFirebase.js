@@ -20,19 +20,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // };
   // firebase.initializeApp(config);
 
-  // var config = {
-  //   apiKey: "AIzaSyD-StDnfMrvKydc8KNyHT12a82zRMNn_Ws",
-  //   authDomain: "uhclshuttle.firebaseapp.com",
-  //   databaseURL: "https://uhclshuttle.firebaseio.com",
-  //   projectId: "uhclshuttle",
-  //   storageBucket: "uhclshuttle.appspot.com",
-  //   messagingSenderId: "642776189341"
-  // };
-  // firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyD-StDnfMrvKydc8KNyHT12a82zRMNn_Ws",
+    authDomain: "uhclshuttle.firebaseapp.com",
+    databaseURL: "https://uhclshuttle.firebaseio.com",
+    projectId: "uhclshuttle",
+    storageBucket: "uhclshuttle.appspot.com",
+    messagingSenderId: "642776189341"
+  };
+  firebase.initializeApp(config);
 
     var auth = firebase.auth();
     var db = firebase.database();
     var messaging = firebase.messaging();
+
+
 
 
 
@@ -134,6 +136,10 @@ var ackActionsDiv = doc.getElementById('ack-actions-div');
   var passwordInput = doc.getElementById('password-input');
 
 //INDEX PAGE
+
+//CONTACT US PAGE
+
+var contactSubmit = doc.getElementById("contact-submit-button");
 
 
 
@@ -364,6 +370,26 @@ FUNCTIONS
 */
 
     //ACCOUNT PAGE FUNCTIONS
+
+    contactSubmit.addEventListener("click", function(){
+      var newKey = db.ref().child('feedback').push().key;
+
+      var feedbackRef = db.ref('feedback').push();
+
+      var name = document.getElementById("contactName").value;
+      var email = document.getElementById("contactEmail").value;
+      var message = document.getElementById("contactMessage").value;
+
+      console.log(name);
+
+      feedbackRef.set({
+        name: name,
+        email: email,
+        message: message
+        });
+    });
+
+
 
 
        function deleteAccount(providerData){                                            //Delete Authenticated Users
@@ -859,10 +885,15 @@ function loadAccountChip(msg){
         }
     }
 
-   accountButton.innerHTML = '<a class="dropdown-toggle" data-toggle="dropdown" style="color: aliceblue; background-color: transparent;">' + displayName + '</a><ul class="dropdown-menu animated slideInUp" style="background-color:#e8cc30;"><li><a id="account-settings-button" style="font-size:15px; border-bottom: 1px solid white; font-weight: 500;">Account settings</a></li><li><a id="sign-out-button" style="font-size:15px; font-weight: 500;">Logout</a></li></ul>';
+   accountButton.innerHTML = '<a class="dropdown-toggle" data-toggle="dropdown" style="color: aliceblue; background-color: transparent;">' + displayName + '</a><ul class="dropdown-menu animated slideInUp" style="background-color:#e8cc30;"><li><a id="account-settings-button" style="font-size:15px; border-bottom: 1px solid white; font-weight: 500;">Account settings</a></li><li><a id="schedule-button" style="font-size:15px; font-weight: 500;">Schedule</a></li><li><a id="sign-out-button" style="font-size:15px; font-weight: 500;">Logout</a></li></ul>';
 
     var signOutButton = doc.getElementById('sign-out-button');
     var accountSettingsButton = doc.getElementById('account-settings-button');
+    var scheduleButton = doc.getElementById('schedule-button');
+
+    scheduleButton.addEventListener('click', function(){
+      redirect("schedule");
+    });
 
     signOutButton.addEventListener("click", function(){
         signout();
