@@ -255,7 +255,7 @@ FIREBASE METHODS
 */
 
 
-      if (uid == 'pmKvDiX6itaaWrYH9R9Ggf0FRlG2'){
+      if (uid == 'I8k2443KlbYEXY31CgtuHYSnwoF3'){
 
            if(loginCard && logoutCard && noticeCard){
                 loginCard.style.display = "none";
@@ -889,11 +889,6 @@ function loadAccountChip(msg){
 
     var signOutButton = doc.getElementById('sign-out-button');
     var accountSettingsButton = doc.getElementById('account-settings-button');
-    var scheduleButton = doc.getElementById('schedule-button');
-
-    scheduleButton.addEventListener('click', function(){
-      redirect("schedule");
-    });
 
     signOutButton.addEventListener("click", function(){
         signout();
@@ -902,6 +897,15 @@ function loadAccountChip(msg){
     accountSettingsButton.addEventListener("click", function(){
         redirect("account");
     });
+
+    var scheduleButton = doc.getElementById('schedule-button');
+
+    scheduleButton.addEventListener('click', function(){
+      if(uid= "I8k2443KlbYEXY31CgtuHYSnwoF3")
+        redirect("admin");
+      else redirect("schedule");
+    });
+
 
 }
 
