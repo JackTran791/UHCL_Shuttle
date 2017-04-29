@@ -10,15 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyB-nhsAVIBPlgokbJIdQ5WjiC8SrJQmtJE",
-    authDomain: "uhcl-shuttle-app-1b25d.firebaseapp.com",
-    databaseURL: "https://uhcl-shuttle-app-1b25d.firebaseio.com",
-    projectId: "uhcl-shuttle-app-1b25d",
-    storageBucket: "uhcl-shuttle-app-1b25d.appspot.com",
-    messagingSenderId: "644302878835"
-  };
-  firebase.initializeApp(config);
+  // var config = {
+  //   apiKey: "AIzaSyB-nhsAVIBPlgokbJIdQ5WjiC8SrJQmtJE",
+  //   authDomain: "uhcl-shuttle-app-1b25d.firebaseapp.com",
+  //   databaseURL: "https://uhcl-shuttle-app-1b25d.firebaseio.com",
+  //   projectId: "uhcl-shuttle-app-1b25d",
+  //   storageBucket: "uhcl-shuttle-app-1b25d.appspot.com",
+  //   messagingSenderId: "644302878835"
+  // };
+  // firebase.initializeApp(config);
+
+  // var config = {
+  //   apiKey: "AIzaSyD-StDnfMrvKydc8KNyHT12a82zRMNn_Ws",
+  //   authDomain: "uhclshuttle.firebaseapp.com",
+  //   databaseURL: "https://uhclshuttle.firebaseio.com",
+  //   projectId: "uhclshuttle",
+  //   storageBucket: "uhclshuttle.appspot.com",
+  //   messagingSenderId: "642776189341"
+  // };
+  // firebase.initializeApp(config);
 
     var auth = firebase.auth();
     var db = firebase.database();
@@ -146,6 +156,7 @@ var ackActionsDiv = doc.getElementById('ack-actions-div');
 EVENT LISTENERS
 
 */
+
 
 
 

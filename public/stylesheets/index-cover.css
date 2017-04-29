@@ -15,7 +15,7 @@ a:hover {
 .btn-default:focus {
 /*
   color: #333;
-  text-shadow: none;  Prevent inheritance from `body` 
+  text-shadow: none;  Prevent inheritance from `body`
   background-color: #fff;
   border: 1px solid #fff;
 */
@@ -114,19 +114,21 @@ body {
   padding-left: 0;
   font-size: 16px;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: #E8CC30; /* IE8 proofing */
+  /*color: rgba(255,255,255,.75);*/
   border-bottom: 2px solid transparent;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
+  color: #ffffff;
   background-color: transparent;
-  border-bottom-color: #e8cc30;
-  border-bottom-color: rgba(224, 193, 40,.25);
+  border-bottom-color: #ffffff;
+  /*border-bottom-color: rgba(224, 193, 40,.25);*/
 }
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
+/*.masthead-nav > .active > a:focus {*/
+{
   color: #e8cc30;
   border-bottom-color: #e8cc30;
 }
@@ -184,12 +186,12 @@ body {
     margin: auto;
     display: block;
     width: 100%;
-    max-width: 500px;
+    /*max-width: 500px;*/
 }
 
 
 /* Add Animation */
-.modal-content, #caption {    
+.modal-content, #caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
@@ -198,12 +200,12 @@ body {
 
 
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
+    from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
+    from {transform:scale(0)}
     to {transform:scale(1)}
 }
 
@@ -225,6 +227,31 @@ body {
     cursor: pointer;
 }
 
+.closeContact {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closeContact:hover,
+.closeContact:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#contact{
+  background:url(/images/image3.png);
+  padding:40px;
+  color:#fff;
+  /*border-top:#333 7px solid;
+  border-bottom:#333 7px solid;*/
+}
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
     .modal-content {
@@ -238,6 +265,8 @@ body {
  * Footer
  */
 #copyright {
+  font-size: 16px;
+  font-weight: 700;
 	color: #e8cc30;
 }
 .mastfoot {

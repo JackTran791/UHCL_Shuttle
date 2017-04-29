@@ -1,124 +1,219 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="/images/hawk_logo.png">
 
-   <title>UHCL Shuttle</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="/images/hawk_logo.png">
 
-    <!-- Bootstrap core CSS -->
-    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <title>UHCL Shuttle</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Custom styles for this template -->
-    <link href="/stylesheets/animate.css" rel="stylesheet">
-    <link href="/stylesheets/index-cover.css" rel="stylesheet">
-    <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- Custom styles for this template -->
+  <link href="/stylesheets/animate.css" rel="stylesheet">
+  <link href="/stylesheets/index-cover.css" rel="stylesheet">
+  <link href="/stylesheets/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- ALL JS HERE -->
 
-  </head>
+  <!-- ALL JS HERE -->
 
-  <body>
+</head>
 
-    <div class="site-wrapper">
+<body>
 
-      <div class="site-wrapper-inner">
+  <div class="site-wrapper">
 
-        <div class="cover-container">
+    <div class="site-wrapper-inner">
 
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">UHCL Shuttle</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a id="teamButton" href="#">Team</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
-                  <li><a href="javascript:void(0)" id="account-menu-button"></a></li>
-                </ul>
-              </nav>
-            </div>
+      <div class="cover-container">
+
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand">UHCL Shuttle</h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a id="teamButton" href="#">Team</a></li>
+                <li><a id="contactButton" href="#">Contact</a></li>
+                <li><a href="javascript:void(0)" id="sign-in-button"><span id="account">Sign In</span></a></li>
+                <li>
+                  <a href="javascript:void(0)" id="account-menu-button"></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="inner cover">
+          <h1 id="coverHeading" class="cover-heading">An app across browser</h1>
+          <p id="coverSubHeading" class="lead animated bounceInLeft">Designed with love for easing your daily commute.</p>
+          <div class="btn-wrapper">
+            <a id="index-signup" class="btn btn-lg btn-default animated bounceIn">Sign Up</a>
+          </div>
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img src="/images/bus2.jpg" class="modal-content" id="img01" style="max-width: 500px">
+            <div id="caption"></div>
           </div>
 
-          <div class="inner cover">
-            <h1 id="coverHeading" class="cover-heading">An app across browser</h1>
-            <p id="coverSubHeading" class="lead animated bounceInLeft">Designed with love for easing your daily commute.</p>
-            <div class="btn-wrapper">
-              <a id="index-signup" class="btn btn-lg btn-default animated bounceIn">Sign Up</a>
-            </div>
-              <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <span class="close">&times;</span>
-                  <img src="/images/bus2.jpg" class="modal-content" id="img01">
-                  <div id="caption"></div>
+          <div id="myContact" class="modal" style="text-align: left">
+
+            <!-- Modal content -->
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: black;border-bottom-color: black">
+                  <span class="closeContact">&times;</span>
+                  <h4 style="text-align: center; color: #e5bd2b">Contact Us</h4>
                 </div>
-              <!-- The modal Ends -->
-              <!--Toast Messages Markup -->
-                <div id="toast"  class="mdl-js-snackbar mdl-snackbar">
-                    <div class="mdl-snackbar__text" ></div>
-                    <button class="mdl-snackbar__action" type="button"></button>
+                <div class="modal-body" style="background-color: black; border-bottom-color: black">
+                  <section id="contact">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-5 col-sm-5">
+                            <div class="form-group">
+                              <label>Name: </label>
+                              <input class="form-control" type="text" id="contactName" value="" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                              <label>Email: </label>
+                              <input class="form-control" type="text" id="contactEmail" value="" placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                              <label>Message: </label>
+                              <textarea class="form-control" id="contactMessage" value="" placeholder="Enter Message" rows="10"></textarea>
+                            </div>
+                            <button class="btn btn-default" style="padding: 15px" onClick="contactClick()">Submit</button>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+
+                        </div>
+                      </div>
+                    </div>
+                  </section>
                 </div>
-
+                <!-- <div class="modal-footer">
+                  <h3>Modal Footer</h3>
+                </div> -->
+              </div>
+            <!-- <h1>Jack Tran</h1> -->
+          </div>
+          <!-- The modal Ends -->
+          <!--Toast Messages Markup -->
+          <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
           </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p id="copyright">University of Houston, Clear-Lake</p>
-            </div>
-          </div>
+        </div>
 
+        <div class="mastfoot">
+          <div class="inner">
+            <p id="copyright">University of Houston, Clear-Lake</p>
+          </div>
         </div>
 
       </div>
 
     </div>
 
-    <!-- Bootstrap core JavaScript
+  </div>
+
+  <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="/javascripts/bootstrap.min.js"></script>
-    <script src="/javascripts/bootstrapValidator.min.js"></script>
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
-    <script src="/javascripts/indexFirebase.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/bootstrapValidator.min.js"></script>
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+  <script src="/javascripts/indexFirebase.js"></script>
 
-  </body>
+</body>
 
-    <script type="text/javascript">
-        var teamButton = document.getElementById("teamButton");
-        var modal = document.getElementById('myModal');
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        var indexSignUp = document.getElementById("index-signup");
+<script type="text/javascript">
+  var teamButton = document.getElementById("teamButton");
+  var modal = document.getElementById('myModal');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  var indexSignUp = document.getElementById("index-signup");
+  var contactButton = document.getElementById('contactButton');
+  var contactModal = document.getElementById('myContact');
 
-        teamButton.addEventListener("click", function(){
-             modal.style.display = "block";
-//            modalImg.src = "../images/bus2.jpg";
-        });
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+  teamButton.addEventListener("click", function() {
+    modal.style.display = "block";
+    //            modalImg.src = "../images/bus2.jpg";
+  });
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+  contactButton.addEventListener("click", function() {
+    contactModal.style.display = "block";
+    //            modalImg.src = "../images/bus2.jpg";
+  });
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
 
-        }
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
 
-         indexSignUp.onclick = function(){
-         window.location = "/login";
-        };
+  }
 
-    </script>
+  var spanContact = document.getElementsByClassName("closeContact")[0];
+
+  spanContact.onclick = function() {
+    contactModal.style.display = "none";
+
+  }
+
+  indexSignUp.onclick = function() {
+    window.location = "/login";
+  };
+</script>
+
+<script type="text/javascript">
+
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD-StDnfMrvKydc8KNyHT12a82zRMNn_Ws",
+    authDomain: "uhclshuttle.firebaseapp.com",
+    databaseURL: "https://uhclshuttle.firebaseio.com",
+    projectId: "uhclshuttle",
+    storageBucket: "uhclshuttle.appspot.com",
+    messagingSenderId: "642776189341"
+  };
+  firebase.initializeApp(config);
+  var db = firebase.database();
+
+  function contactClick() {
+
+  var newKey = db.ref().child('feedback').push().key;
+
+  var feedbackRef = db.ref('feedback').push();
+
+  var name = document.getElementById("contactName").value;
+  var email = document.getElementById("contactEmail").value;
+  var message = document.getElementById("contactMessage").value;
+
+  console.log(name);
+
+  feedbackRef.set({
+    name: name,
+    email: email,
+    message: message
+});
+};
+</script>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+<script src="javascripts/admin.js"></script> -->
+
 </html>
