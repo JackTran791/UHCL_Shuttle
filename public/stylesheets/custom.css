@@ -293,20 +293,20 @@ input.transparent-input:focus {
 }
 
 .form-control::-moz-placeholder {
-  color: black;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .form-control::-ms-input-placeholder {
-  color: black;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 500;
 }
 
 .form-control::-webkit-input-placeholder {
-  color: black;
-  font-size: 13px;
+  color: #ffffff;
+  font-size: 15px;
   font-weight: 500;
 }
 
