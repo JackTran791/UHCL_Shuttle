@@ -145,6 +145,8 @@ var contactSubmit = doc.getElementById("contact-submit-button");
 
 
 
+
+
 //SHARED
   var email = null;
   var provider = null;
@@ -269,7 +271,7 @@ FIREBASE METHODS
                     });
                 }
             if(pwdUsersOnlyDiv){
-                if(provider == "password" && uid == 'pmKvDiX6itaaWrYH9R9Ggf0FRlG2'){
+                if(provider == "password" && uid == 'I8k2443KlbYEXY31CgtuHYSnwoF3'){
                     if(verifiedUser){
                             // display account update options
                             pwdUsersOnlyDiv.style.display = "inline";
@@ -369,6 +371,25 @@ FUNCTIONS
 
 */
 
+  var feedbackRef = db.ref().child("feedback");
+  feedbackRef.on("child_added", snap => {
+
+    var name = snap.child("name").val();
+    var email = snap.child("email").val();
+    var message = snap.child("message").val();
+    var fbKey = snap.key;
+
+    $("#feedback_tbody").append("<tr><td id='un'>" + name + "</td><td id='ue'>" + email + "</td><td style='text-align: left'>" + message +
+      "</td><td><button type='button' class='deleteFeedback' id=" + fbKey + ">Delete</button></td>/tr>");
+        var deleteFeedbackAdmin = doc.getElementById(fbKey);
+        deleteFeedbackAdmin.addEventListener('click', function(){
+          var id = $(this).attr('id');
+          db.ref("feedback").child(id).remove();
+          var $row = $(this).closest("tr").remove();
+          console.log(id);
+        });
+    });
+
     //ACCOUNT PAGE FUNCTIONS
 
     contactSubmit.addEventListener("click", function(){
@@ -380,7 +401,7 @@ FUNCTIONS
       var email = document.getElementById("contactEmail").value;
       var message = document.getElementById("contactMessage").value;
 
-      console.log(name);
+      // console.log(name);
 
       feedbackRef.set({
         name: name,
@@ -392,7 +413,7 @@ FUNCTIONS
 
 
 
-       function deleteAccount(providerData){                                            //Delete Authenticated Users
+       function deleteAccount(providerData){      //Delete Authenticated Users
            var prdata = " ";
            prdata = providerData;
            if(prdata == 'google.com'){
@@ -431,6 +452,7 @@ FUNCTIONS
 
 
       };
+
 
    function removeCurrentUserPro(uid) {
        var userIdPro = uid;
@@ -703,7 +725,7 @@ function fireAuth(){
         auth.signInWithEmailAndPassword(email, password).then(function(value) {
           var user = auth.currentUser;
           uid = user.uid;
-          if (uid == 'pmKvDiX6itaaWrYH9R9Ggf0FRlG2'){
+          if (uid == 'I8k2443KlbYEXY31CgtuHYSnwoF3'){
                 redirect('admin');
 
 

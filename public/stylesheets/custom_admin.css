@@ -53,12 +53,90 @@ body {
 */
 }
 
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #E8CC30;
+    opacity: 1;
+  }
+
+  .text-muted {
+    /*padding-top: 10px;*/
+    color: green;
+    font-weight: bold;
+    font-size: 8px;
+    font-family: "Times New Roman", Georgia, sans-serif;
+    /*letter-spacing: 2px;*/
+  }
+
+  #text1 {
+    font-weight: normal;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+/* For tablet */
+@media only screen and (min-width: 600px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #E8CC30;
+    opacity: 1;
+  }
+
+  .text-muted {
+    padding-top: 10px;
+    color: green;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: "Times New Roman", Georgia, sans-serif;
+    letter-spacing: 2px;
+  }
+
+  #text1 {
+    font-weight: normal;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+/* For desktop */
+@media only screen and (min-width: 768px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #E8CC30;
+    opacity: 1;
+  }
+
+  .text-muted {
+    padding-top: 10px;
+    color: green;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "Times New Roman", Georgia, sans-serif;
+    letter-spacing: 2px;
+  }
+
+  #text1 {
+    font-weight: normal;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
 #login-card {}
 
 #sectionPanel {
   background-color: #F1F1F1;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 5px;
+  /*margin-top: 20px;*/
 }
 
 .panel {
@@ -125,7 +203,7 @@ body {
 
 .navbar-inverse .navbar-nav>.active>a:hover {
   background-color: #016390;
-  color: green;
+  color: #ffffff;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -537,29 +615,6 @@ h5 {
 
 /* Snackbar Ends */
 
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  background-color: #E8CC30;
-  opacity: 1;
-}
-
-.text-muted {
-  padding-top: 10px;
-  color: green;
-  font-weight: bold;
-  font-size: 16px;
-  font-family: "Times New Roman", Georgia, sans-serif;
-  letter-spacing: 2px;
-}
-
-#text1 {
-  font-weight: normal;
-  font-size: 10px;
-  text-align: center;
-}
-
 
 /* ADMIN PAGE CSS START */
 
@@ -571,16 +626,28 @@ h5 {
 }
 
 #admin-h6 {
-  /*color: #e8cc30;*/
-  color: #000000;
+  color: black;
   margin: 0;
   padding-top: 0;
   margin-bottom: 5px;
   font-family: 'Arial', serif;
   font-size: 18px;
   font-weight: 400;
-  text-align: left;
-  padding-left: 20px;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.admin-h7 {
+  text-align: justify;
+  padding: 5px;
+  color: black;
+  margin: 0;
+  padding-top: 0;
+  margin-bottom: 5px;
+  font-family: 'Arial', serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding-top: 5px;
 }
 
 #messageTypeLabel {
@@ -764,3 +831,82 @@ h5 {
 }
 
 /* Custom-textarea-ends */
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    /*max-width: 500px;*/
+}
+
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closeContact {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closeContact:hover,
+.closeContact:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

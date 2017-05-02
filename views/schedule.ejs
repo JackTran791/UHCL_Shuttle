@@ -69,55 +69,70 @@
     </div>
   </nav>
 
+  <div id="myContact" class="modal" style="text-align: left">
+
+    <!-- Modal content -->
+    <div class="modal-content" style="width: 70%">
+      <div class="modal-header" style="background-color: black;border-bottom-color: black">
+        <span class="closeContact">&times;</span>
+        <h4 style="text-align: center; color: #e5bd2b">Contact Us</h4>
+      </div>
+      <div class="modal-body" style="background-color: black; border-bottom-color: black">
+        <section id="contact">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-5 col-sm-5">
+                <div class="form-group">
+                  <label>Name: </label>
+                  <input class="form-control" type="text" id="contactName" value="" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                  <label>Email: </label>
+                  <input class="form-control" type="text" id="contactEmail" value="" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                  <label>Message: </label>
+                  <textarea class="form-control" id="contactMessage" value="" placeholder="Enter Message" rows="10"></textarea>
+                </div>
+                <button id="contact-submit-button" class="btn btn-default" style="padding: 15px">Submit</button>
+              </div>
+              <div class="col-md-7 col-sm-7">
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- <div class="modal-footer">
+             <h3>Modal Footer</h3>
+           </div> -->
+    </div>
+    <!-- <h1>Jack Tran</h1> -->
+  </div>
+
   <section id="sectionPanel">
-    <div class="container" style="border: 2px solid #F1F1F1; margin-top: 20px; background-color: #ffffff;box-shadow: 2px 2px 2px #888888;">
+    <div class="container" style="border: 2px solid #F1F1F1; background-color: #ffffff;box-shadow: 2px 2px 2px #888888;">
       <div class="row">
         <div class="col-sm-4 col-md-4">
-          <img src="../images/uhcl-logo.jpg" alt="Start Service" style="width: 100%;height: 100%; padding-top: 60px">
+          <img src="../images/uhcl-logo.jpg" alt="Start Service" style="width: 100%;height: 100%; padding-top: 30px">
         </div>
         <div class="col-sm-8 col-md-8">
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-              <h3 style="text-align: center; letter-spacing: 2px;border-bottom: 1px solid #e6e6e6">Admin Login Control</h3>
+              <h3 style="text-align: center; letter-spacing: 2px;border-bottom: 1px solid #e6e6e6">Courtesy Shuttle</h3>
             </div>
           </div>
           <!-- row -->
 
-          <div class="row">
-            <h6 id="admin-h6" class="col-xs-12">Please Select Type of Message Broadcasting</h6>
+          <div class="row" style="padding: 5px">
+              <h6 class="admin-h7">The UHCL Courtesy Shuttle is operated as courtesy service by Student Life for
+                 UHCL students, faculty, and staff. We don't provide official transportation service and are limited by our vehicles, drivers,
+                budget, and other factors. The UHCL Courtesy Shuttle operates on an established route and is not available by individual request.</h6>
+              <h6 id="admin-h6" style="border-bottom: 1px solid #F1F1F1">Schedule and Service Notice</h6>
+              <h6 class="admin-h7">. The current schedule is effective: Wed, Jan 18 - Thu, May 11</h6>
+              <h6 class="admin-h7">. No morning or Friday service</h6>
           </div>
           <!-- row -->
-
-          <div class="row">
-            <div class="col-sm-4 col-md-4" style="padding-top: 20px">
-              <h6 for="messageTypeLabel" id="messageTypeLabel">Message type</h6>
-            </div>
-            <div class="col-sm-8 col-md-8" style="padding-top:20px">
-              <div class="btn-group" id="admin-btn-grp">
-                <button type="button" id="admin-select-type" class="btn btn-default nohover">------ Select Type -------<i id="admin-icon1" class="glyphicon glyphicon-arrow-right"></i></button>
-                <button type="button" id="admin-toggle-select" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="caret"></span>
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                <ul id="admin-ul-dropdown-menu" class="dropdown-menu animated fadeInUp">
-                  <li class="admin-list"><a id="start-service" data-toggle="collapse" data-target="#start-service-section"><h6>Start Service</h6></a></li>
-                  <li class="admin-list"><a id="suspend-service" data-toggle="collapse" data-target="#suspend-service-section"><h6>Suspend Service</h6></a></li>
-                  <li class="admin-list"><a id="temp-shutdown" data-toggle="collapse" data-target="#temporary-service-section"><h6>Temporary Shutdown</h6></a></li>
-                  <li role="separator" id="separator" class="divider"></li>
-                  <li class="admin-list"><a id="custom-service" data-toggle="collapse" data-target="#custom-service-section"><h6>Custom Service Message</h6></a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- row -->
-
-          <div class="row" style="padding: 20px">
-            <h6>Please choose one of four options above</h6>
-            <h6>.  Start Service</h6>
-            <h6>.  Suspend Service</h6>
-            <h6>.  Temporary Shutdown</h6>
-            <h6>.  Custom Service Message</h6>
-          </div>
 
         </div>
         <!--col-sm-8 -->
@@ -128,7 +143,7 @@
   </section>
 
   <section id="table_schedule">
-    <div class="container" style="border: 2px solid #F1F1F1; margin-top: 20px; background-color: #ffffff;box-shadow: 2px 2px 2px #888888;margin-bottom: 20px">
+    <div class="container" style="border: 2px solid #F1F1F1;background-color: #ffffff;box-shadow: 2px 2px 2px #888888;margin-bottom: 20px">
       <div class="row" style="padding-top: 20px">
         <div class="col-sm-8 col-sm-offset-2">
           <h3 style="text-align: center; letter-spacing: 2px;border-bottom: 1px solid #e6e6e6">Shuttle Service Schedule</h3>
@@ -269,12 +284,8 @@
 
   <section class="footer">
     <div class="container">
-      <div class="col-sm-6 col-md-6">
-        <p class="text-muted" style="text-align: left"> 2017 University of Houston - Clear-Lake</p>
-      </div>
-      <div class="col-sm-6 col-md-6">
-        <p class="text-muted" style="text-align: right">2700 Bay Area Boulevard, Houston, TX 77058</p>
-      </div>
+        <p class="text-muted" style="text-align: center; padding-top: 10px"> 2017 University of Houston - Clear-Lake</p>
+        <!-- <p class="text-muted" style="text-align: right">2700 Bay Area Boulevard, Houston, TX 77058</p> -->
     </div>
   </section>
 
@@ -336,411 +347,6 @@
       });
   </script>
 
-  <script type="text/javascript">
-    var startServiceDisplay = document.getElementById("start-service-display");
-    var cancelButton = document.getElementById("cancel-button");
-    var startService = document.getElementById("start-service");
-    var suspendServiceDisplay = document.getElementById("suspend-service-display");
-    var suspendService = document.getElementById("suspend-service");
-    var serviceOutageDisplay = document.getElementById("service-outage-display");
-    var temporaryShutdown = document.getElementById("temp-shutdown");
-    var customDisplay = document.getElementById("custom-display");
-    var customService = document.getElementById("custom-service");
-
-
-    //ADMIN PAGE JS-----------------------------------------------------------------------------------------------------------------------------
-
-
-
-    //START-SERVICE-CARD JS-----------------------------------------------------------------------------------------------------------
-    $('#timepicker-location').timepicker({
-      template: 'dropdown',
-      maxHours: 24,
-      minuteStep: 1,
-      defaultTime: 'current',
-      showMeridian: false
-    });
-
-    $(document).ready(function() {
-      var location = $("#location-input");
-      var times = $("#timepicker-location");
-
-      $('#location-input, #timepicker-location').change(function() {
-        startServiceDisplay.style.display = "inline";
-        startServiceDisplay.innerHTML = 'The service starts from ' + location.val() + ' at ' + times.val() + ' .';
-        document.getElementById("myTextarea").value = 'The service starts from ' + location.val() + ' at ' + times.val() + ' .';
-
-        // Split to take hour and minute
-        var arr = times.val().split(':');
-        var hour = parseInt(arr[0]);
-        var min = parseInt(arr[1]);
-
-        function checkVal(hour, min) {
-          if(min > 59 ) {
-            hour = hour + 1;
-            min = min - 60;
-            if ( min < 10) min = "0" + min;
-          }
-
-          return hour + ":" + min;
-
-        };
-
-        // Set data to table
-        if(location.val() == "SSCB Parking") {
-          document.getElementById("sscb-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("sscb-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("sscb-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("sscb-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("sscb-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("sscb-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("sscb-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("sscb-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "Kissing-Stones Stop") {
-          document.getElementById("stones-shop-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("stones-shop-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("stones-shop-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("stones-shop-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("stones-shop-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("stones-shop-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("stones-shop-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("stones-shop-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "Arbor Parking") {
-          document.getElementById("arbor-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("arbor-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("arbor-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("arbor-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("arbor-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("arbor-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("arbor-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("arbor-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "Delta Parking") {
-          document.getElementById("delta-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("delta-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("delta-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("delta-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("delta-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("delta-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("delta-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("delta-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "UFA") {
-          document.getElementById("ufa-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("ufa-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("ufa-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("ufa-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("ufa-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("ufa-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("ufa-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("ufa-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "IVY Apt") {
-          document.getElementById("ivy-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("ivy-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("ivy-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("ivy-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("ivy-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("ivy-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("ivy-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("ivy-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "Cove Apt") {
-          document.getElementById("cove-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("cove-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("cove-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("cove-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("cove-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("cove-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("cove-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("cove-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-        if(location.val() == "Lakeshore Apt") {
-          document.getElementById("lakeshore-parking-a").innerHTML = times.val();
-
-          min = min + 15;
-          document.getElementById("lakeshore-parking-b").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("lakeshore-parking-c").innerHTML = checkVal(hour, min);
-
-          min = min + 8;
-          document.getElementById("lakeshore-parking-d").innerHTML = checkVal(hour, min);
-
-          min = min + 9;
-          document.getElementById("lakeshore-parking-e").innerHTML = checkVal(hour, min);
-
-          min = min + 11;
-          document.getElementById("lakeshore-parking-f").innerHTML =checkVal(hour, min);
-
-          min = min + 6;
-          document.getElementById("lakeshore-parking-g").innerHTML = checkVal(hour, min);
-
-          min = min + 10;
-          document.getElementById("lakeshore-parking-h").innerHTML = checkVal(hour, min);
-        }
-
-      });
-
-      $(document).keyup(function(e) {
-
-        if (e.keyCode == 27) { // escape key maps to keycode `27`
-          // <DO YOUR WORK HERE>
-          $(startServiceDisplay).empty();
-          $('#location-input option').prop('selected', function() {
-            return this.defaultSelected;
-          });
-
-        }
-
-      });
-    });
-    cancelButton.addEventListener("click", function() {
-      $(startServiceDisplay).empty();
-      $('#location-input option').prop('selected', function() {
-        return this.defaultSelected;
-      });
-    });
-
-
-    // startService.addEventListener("click", function() {
-    //   setTimeout(function() {
-    //     $('#start-service-section').fadeOut('slow');
-    //     $('#suspend-service-section').fadeIn('fast');
-    //   }, 60000);
-    // });
-
-    //START-SERVICE-CARD JS ENDS ----------------------------------------------------------------------------------------------------
-
-
-    //SUSPEND SERVICE-CARD JS STARTS ------------------------------------------------------------------------------------------------
-    $(document).ready(function() {
-      var suspendDate = $("#datepicker");
-      $('#datepicker').datepicker({
-        format: 'mm/dd/yyyy',
-        autoclose: true,
-        keyboardNavigation: true,
-        clearBtn: true,
-        todayHighlight: true
-
-      });
-
-      $('#datepicker').change(function() {
-        suspendServiceDisplay.style.display = "inline";
-        suspendServiceDisplay.innerHTML = 'The Uhcl Shuttle service is suspended for the day i.e. ' + suspendDate.val() + '. Sorry for any inconvenience caused.';
-        document.getElementById("myTextarea1").value = 'The Uhcl Shuttle service is suspended for the day i.e. ' + suspendDate.val() + '. Sorry for any inconvenience caused.';
-      });
-
-      $(document).keyup(function(e) {
-
-        if (e.keyCode == 27) { // escape key maps to keycode `27`
-          // <DO YOUR WORK HERE>
-          $("#datepicker").datepicker('clearDates', 'none');
-          $(suspendServiceDisplay).empty();
-
-        }
-
-      });
-    });
-
-    cancelButton.addEventListener("click", function() {
-      $("#datepicker").datepicker('clearDates', 'none');
-      $(suspendServiceDisplay).empty();
-    });
-
-    suspendService.addEventListener("click", function() {
-      setTimeout(function() {
-        $('#suspend-service-card').fadeOut('slow');
-      }, 60000);
-    });
-
-
-    //SUSPEND SERVICE-CARD JS ENDS-------------------------------------------------------------------------------------------------------------
-
-    //TEMPORARY-SERVICE-OUTAGE-CARD-STARTS-----------------------------------------------------------------------------------------------------
-
-    $(document).ready(function() {
-      $('#datetimepicker1').datetimepicker();
-      $('#datetimepicker2').datetimepicker({
-        useCurrent: false //Important! See issue #1075
-      });
-      $("#datetimepicker1, #datetimepicker2").on("dp.change", function(e) {
-        //                        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-        //                        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-        var dayTimePicker1 = $('#datetimepicker1');
-        var dayTimePicker2 = $('#datetimepicker2');
-        serviceOutageDisplay.style.display = 'inline';
-        serviceOutageDisplay.innerHTML = 'The Uhcl shuttle service will be down from ' + dayTimePicker1.find("input").val() + ' to ' + dayTimePicker2.find("input").val() + ' .Sorry for the inconvenience caused.';
-        document.getElementById("myTextarea2").value = 'The Uhcl shuttle service will be down from ' + dayTimePicker1.find("input").val() + ' to ' + dayTimePicker2.find("input").val() + ' .Sorry for the inconvenience caused.';
-
-        $(document).keyup(function(e) {
-
-          if (e.keyCode == 27) { // escape key maps to keycode `27`
-            // <DO YOUR WORK HERE>
-            $("#datetimepicker1").data("DateTimePicker").clear();
-            $("#datetimepicker2").data("DateTimePicker").clear();
-            $(serviceOutageDisplay).empty();
-
-          }
-
-        });
-      });
-    });
-
-    cancelButton.addEventListener("click", function() {
-      $("#datetimepicker1").data("DateTimePicker").clear();
-      $("#datetimepicker2").data("DateTimePicker").clear();
-      $(serviceOutageDisplay).empty();
-    });
-
-    temporaryShutdown.addEventListener("click", function() {
-      setTimeout(function() {
-        $('#temporary-service-outage-card').fadeOut('slow');
-      }, 60000);
-    });
-
-    //TEMPORARY-SERVICE-OUTAGE-CARD-ENDS-----------------------------------------------------------------------------------------------------
-
-    //CUSTOM-SERVICE-CARD-STARTS-------------------------------------------------------------------------------------------------------------
-
-    $(document).ready(function() {
-      var customInputTextarea = $("#custom-input-textarea");
-      $("#custom-input-textarea").change(function() {
-        customDisplay.style.display = "inline";
-        customDisplay.innerHTML = customInputTextarea.val();
-        document.getElementById("myTextarea3").value = customInputTextarea.val();
-      });
-
-      $(document).keyup(function(e) {
-
-        if (e.keyCode == 27) { // escape key maps to keycode `27`
-          // <DO YOUR WORK HERE>
-          $('#custom-input-textarea').val("");
-          $(customDisplay).empty();
-        }
-      });
-
-    });
-    cancelButton.addEventListener("click", function() {
-      $('#custom-input-textarea').val("");
-      $(customDisplay).empty();
-    });
-    customService.addEventListener("click", function() {
-      setTimeout(function() {
-        $('#custom-service-card').fadeOut('slow');
-      }, 60000);
-    });
-
-    //ADMIN PAGE JS ENDS------------------------------------------------------------------------------------------------------------------------
-  </script>
-
 
 
 
@@ -758,6 +364,22 @@
 
   <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
   <script src="/javascripts/indexFirebase.js"></script>
+
+  <script type="text/javascript">
+    var contactButton = document.getElementById('contactButton');
+    var contactModal = document.getElementById('myContact');
+
+    contactButton.addEventListener("click", function() {
+      contactModal.style.display = "block";
+    });
+
+    var spanContact = document.getElementsByClassName("closeContact")[0];
+
+    spanContact.onclick = function() {
+      contactModal.style.display = "none";
+
+    }
+  </script>
 
 </body>
 

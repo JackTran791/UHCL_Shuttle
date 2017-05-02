@@ -64,7 +64,7 @@
   <div id="myContact" class="modal" style="text-align: left">
 
     <!-- Modal content -->
-    <div class="modal-content">
+    <div class="modal-content" style="width: 80%">
       <div class="modal-header" style="background-color: black;border-bottom-color: black">
         <span class="closeContact">&times;</span>
         <h4 style="text-align: center; color: #e5bd2b">Contact Us</h4>
@@ -304,31 +304,12 @@
   <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
   <script src="/javascripts/indexFirebase.js"></script>
   <script type="text/javascript">
-    // var teamButton = document.getElementById("teamButton");
-    // var modal = document.getElementById('myModal');
-    // var modalImg = document.getElementById("img01");
-    // var captionText = document.getElementById("caption");
-    // var indexSignUp = document.getElementById("index-signup");
     var contactButton = document.getElementById('contactButton');
     var contactModal = document.getElementById('myContact');
 
-    // teamButton.addEventListener("click", function() {
-    //   modal.style.display = "block";
-    //   //            modalImg.src = "../images/bus2.jpg";
-    // });
-
     contactButton.addEventListener("click", function() {
       contactModal.style.display = "block";
-      //            modalImg.src = "../images/bus2.jpg";
     });
-    // Get the <span> element that closes the modal
-    // var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    //   modal.style.display = "none";
-    //
-    // }
 
     var spanContact = document.getElementsByClassName("closeContact")[0];
 
@@ -336,10 +317,6 @@
       contactModal.style.display = "none";
 
     }
-
-    // indexSignUp.onclick = function() {
-    //   window.location = "/login";
-    // };
   </script>
 </body>
 
