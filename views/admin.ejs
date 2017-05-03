@@ -357,7 +357,6 @@
           <!-- Temporary-outage-service-card ends here -->
         </div>
       </div>
-    </div>
   </section>
 
   <section id="custom-service-section" class="collapse">
@@ -929,12 +928,12 @@
     });
 
 
-    // startService.addEventListener("click", function() {
-    //   setTimeout(function() {
-    //     $('#start-service-section').fadeOut('slow');
-    //     $('#suspend-service-section').fadeIn('fast');
-    //   }, 60000);
-    // });
+     startService.addEventListener("click", function() {
+       setTimeout(function() {
+         $('#start-service-section').fadeOut('slow');
+         $('#suspend-service-section').fadeIn('fast');
+       }, 60000);
+     });
 
     //START-SERVICE-CARD JS ENDS ----------------------------------------------------------------------------------------------------
 
@@ -970,6 +969,7 @@
     });
 
     cancelButton.addEventListener("click", function() {
+        alert('Button pressed');
       $("#datepicker").datepicker('clearDates', 'none');
       $(suspendServiceDisplay).empty();
     });
@@ -991,7 +991,25 @@
         serviceOutageDisplay.style.display = 'inline';
         serviceOutageDisplay.innerHTML = 'The Uhcl Shuttle service is not available for ' + multiItemSelect.val() + '. Sorry for any inconvenience caused.';
      });
+       
+       $(document).keyup(function(e){
+          if(e.keyCode == 27){
+              $('.selectpicker').selectpicker('deselectAll');
+              $(serviceOutageDisplay).empty();
+          } 
+       });
    });
+      
+     cancelButton.addEventListener("click", function(){
+          $('.selectpicker').selectpicker('deselectAll');
+             $(serviceOutageDisplay).empty();
+     });
+            
+         temporaryShutdown.addEventListener("click", function(){
+            setTimeout(function() {
+                $('#temporary-service-outage-card').fadeOut('slow');
+            }, 60000); 
+        });
 
     //TEMPORARY-SERVICE-OUTAGE-CARD-ENDS-----------------------------------------------------------------------------------------------------
 
