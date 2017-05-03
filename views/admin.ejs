@@ -21,6 +21,7 @@
   <link href="/bootstrap-timepicker/css/bootstrap-timepicker.min.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
   <link href="/bootstrap-datetimepicker-master/build/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-amber.min.css" />
   <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
@@ -33,6 +34,7 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
   <script type="text/javascript" src="/bootstrap-datetimepicker-master/build/js/bootstrap-datetimepicker.min.js"></script>
   <script type="text/javascript" src="/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
@@ -311,37 +313,26 @@
               </div>
             </div>
             <div class="row" style="padding: 20px">
-              <div class="col-sm-3 col-md-3" style="padding-top: 20px">
-                <h6 for="messageTypeLabel" id="messageTypeLabel">Pick-up Date</h6>
+              <div class="col-sm-5 col-md-5" style="padding-top: 20px">
+                <h6 for="messageTypeLabel" id="messageTypeLabel">Select Multiple Shift</h6>
               </div>
-              <div class="col-sm-9 col-md-9" style="padding-top: 20px">
-                <div id="calender-time-range">
-                  <div class="form-group">
-                    <div class='input-group date' id='datetimepicker1'>
-                      <input type='text' class="form-control" placeholder="MM/DD/YYY" />
-                      <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
+              <div class="col-sm-7 col-md-7" style="padding-top: 20px">             
+                  <div class="input-group">
+                    <select class='selectpicker' id='multi-Dropdown' multiple>
+                              <option>Shift A</option>
+                              <option>Shift B</option>
+                              <option>Shift C</option>
+                              <option>Shift D</option>
+                              <option>Shift E</option>
+                              <option>Shift F</option>
+                              <option>Shift G</option>
+                              <option>Shift H</option>
+                      </select>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
-            <div class="row" style="padding: 20px">
-              <div class="col-sm-3 col-md-3" style="padding-top: 20px">
-                <h6 for="messageTypeLabel" id="messageTypeLabel">Pick-up Date</h6>
-              </div>
-              <div class="col-sm-9 col-md-9" style="padding-top: 20px">
-                <div class="form-group">
-                  <div class='input-group date' id='datetimepicker2'>
-                    <input type='text' class="form-control" placeholder="MM/DD/YYY" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        
             <div class="row" style="padding: 20px">
               <div id="service-outage-card-display" class="col-md-12">
                 <p id="service-outage-display"> </p>
@@ -994,45 +985,13 @@
 
     //TEMPORARY-SERVICE-OUTAGE-CARD-STARTS-----------------------------------------------------------------------------------------------------
 
-    $(document).ready(function() {
-      $('#datetimepicker1').datetimepicker();
-      $('#datetimepicker2').datetimepicker({
-        useCurrent: false //Important! See issue #1075
-      });
-      $("#datetimepicker1, #datetimepicker2").on("dp.change", function(e) {
-        //                        $('#datetimepicker2').data("DateTimePicker").minDate(e.date);
-        //                        $('#datetimepicker1').data("DateTimePicker").maxDate(e.date);
-        var dayTimePicker1 = $('#datetimepicker1');
-        var dayTimePicker2 = $('#datetimepicker2');
+   $(document).ready(function(){
+     var multiItemSelect = $("#multi-Dropdown");
+     $("#multi-Dropdown").change(function(){
         serviceOutageDisplay.style.display = 'inline';
-        serviceOutageDisplay.innerHTML = 'The Uhcl shuttle service will be down from ' + dayTimePicker1.find("input").val() + ' to ' + dayTimePicker2.find("input").val() + ' .Sorry for the inconvenience caused.';
-        document.getElementById("myTextarea2").value = 'The Uhcl shuttle service will be down from ' + dayTimePicker1.find("input").val() + ' to ' + dayTimePicker2.find("input").val() + ' .Sorry for the inconvenience caused.';
-
-        $(document).keyup(function(e) {
-
-          if (e.keyCode == 27) { // escape key maps to keycode `27`
-            // <DO YOUR WORK HERE>
-            $("#datetimepicker1").data("DateTimePicker").clear();
-            $("#datetimepicker2").data("DateTimePicker").clear();
-            $(serviceOutageDisplay).empty();
-
-          }
-
-        });
-      });
-    });
-
-    cancelButton.addEventListener("click", function() {
-      $("#datetimepicker1").data("DateTimePicker").clear();
-      $("#datetimepicker2").data("DateTimePicker").clear();
-      $(serviceOutageDisplay).empty();
-    });
-
-    temporaryShutdown.addEventListener("click", function() {
-      setTimeout(function() {
-        $('#temporary-service-outage-card').fadeOut('slow');
-      }, 60000);
-    });
+        serviceOutageDisplay.innerHTML = 'The Uhcl Shuttle service is not available for ' + multiItemSelect.val() + '. Sorry for any inconvenience caused.';
+     });
+   });
 
     //TEMPORARY-SERVICE-OUTAGE-CARD-ENDS-----------------------------------------------------------------------------------------------------
 
